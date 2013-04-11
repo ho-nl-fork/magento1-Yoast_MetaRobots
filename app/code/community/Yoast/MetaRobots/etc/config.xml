@@ -19,7 +19,7 @@
 <config>
 	<modules>
 		<Yoast_MetaRobots>
-			<version>0.1.0</version>
+			<version>0.2.0</version>
 		</Yoast_MetaRobots>
 	</modules>
 	<frontend>
@@ -32,13 +32,14 @@
                 </Yoast_MetaRobots>
             </modules>
         </translate>
-		<layout>
+        <layout>
             <updates>
-                <metarobots>
+                <metarobots module="metarobots">
                     <file>metarobots.xml</file>
                 </metarobots>
             </updates>
         </layout>
+
 	</frontend>
 	<global>
 		<models>
@@ -84,6 +85,11 @@
 				</rewrite>
 			</catalog>
 		</blocks>
+        <helpers>
+            <metarobots>
+                <class>Yoast_MetaRobots_Helper</class>
+            </metarobots>
+        </helpers>
 	</global>
     <default>
         <design>
