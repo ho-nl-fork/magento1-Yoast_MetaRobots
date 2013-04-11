@@ -35,7 +35,7 @@ $installer->addAttribute(Mage_Catalog_Model_Category::ENTITY, 'meta_robots', arr
     'required'      => false,
     'user_defined'  => false,
     'source'        => 'metarobots/attribute_source_metarobots',
-    'default'       => Yoast_MetaRobots_Model_Category_Attribute_Source_Metarobots::META_ROBOTS_INDEX_FOLLOW,
+    'default'       => Yoast_MetaRobots_Model_Attribute_Source_Metarobots::META_ROBOTS_INDEX_FOLLOW,
     'global'        => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
 ));
 
