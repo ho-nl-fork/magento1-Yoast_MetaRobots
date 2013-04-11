@@ -19,7 +19,7 @@
 <config>
 	<modules>
 		<Yoast_MetaRobots>
-			<version>0.2.0</version>
+			<version>0.3.0</version>
 		</Yoast_MetaRobots>
 	</modules>
 	<frontend>
@@ -79,11 +79,6 @@
 					<page>Yoast_MetaRobots_Block_Cms_Page</page>
 				</rewrite>
 			</cms>
-			<catalog>
-				<rewrite>
-					<product_view>Yoast_MetaRobots_Block_Catalog_Product_View</product_view>
-				</rewrite>
-			</catalog>
 		</blocks>
         <helpers>
             <metarobots>

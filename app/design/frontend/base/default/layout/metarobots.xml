@@ -19,13 +19,22 @@
  -->
 <layout version="0.1.0">
 
-    <default>
+    <catalog_category_default>
         <reference name="head">
             <action method="setRobots">
                 <robots helper="metarobots/getCurrentCategoryRobots"/>
             </action>
         </reference>
-    </default>
+    </catalog_category_default>
+    <catalog_product_view>
+        <reference name="head">
+            <action method="setRobots">
+                <robots helper="metarobots/getCurrentProductRobots"/>
+            </action>
+        </reference>
+    </catalog_product_view>
+
+
     <!--
 Search pages
 -->

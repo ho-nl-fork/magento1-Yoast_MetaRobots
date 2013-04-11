@@ -30,4 +30,13 @@ class Yoast_MetaRobots_Helper_Data extends Mage_Core_Helper_Abstract
 
        return $option->getOptionLabel($category->getMetaRobots());
    }
+
+    public function getCurrentProductRobots()
+   {
+       $product = Mage::registry('current_product');
+       /** @var $option Yoast_MetaRobots_Model_Attribute_Source_Metarobots */
+       $option = Mage::getModel('metarobots/attribute_source_metarobots');
+
+       return $option->getOptionLabel($product->getMetaRobots());
+   }
 }
