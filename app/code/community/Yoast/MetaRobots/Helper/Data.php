@@ -26,16 +26,16 @@ class Yoast_MetaRobots_Helper_Data extends Mage_Core_Helper_Abstract
    {
        $category = Mage::registry('current_category');
        /** @var $option Yoast_MetaRobots_Model_Attribute_Source_Metarobots */
-       $option = Mage::getModel('metarobots/attribute_source_metarobots');
+       $option = Mage::getSingleton('metarobots/attribute_source_metarobots');
 
        return $option->getOptionLabel($category->getMetaRobots());
    }
 
-    public function getCurrentProductRobots()
+   public function getCurrentProductRobots()
    {
        $product = Mage::registry('current_product');
        /** @var $option Yoast_MetaRobots_Model_Attribute_Source_Metarobots */
-       $option = Mage::getModel('metarobots/attribute_source_metarobots');
+       $option = Mage::getSingleton('metarobots/attribute_source_metarobots');
 
        return $option->getOptionLabel($product->getMetaRobots());
    }

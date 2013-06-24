@@ -22,31 +22,40 @@
  */
 class Yoast_MetaRobots_Model_Attribute_Source_Metarobots
     extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
+{
+    const META_ROBOTS_INDEX_FOLLOW               = 1;
+    const META_ROBOTS_INDEX_NOFOLLOW             = 2;
+    const META_ROBOTS_NOINDEX_FOLLOW             = 3;
+    const META_ROBOTS_NOINDEX_NOFOLLOW           = 4;
+    const META_ROBOTS_INDEX_FOLLOW_NOARCHIVE     = 5;
+    const META_ROBOTS_INDEX_NOFOLLOW_NOARCHIVE   = 6;
+    const META_ROBOTS_NOINDEX_NOFOLLOW_NOARCHIVE = 7;
+
+
+    /**
+     * @return array
+     */
+    public function getAllOptions()
     {
-        const META_ROBOTS_INDEX_FOLLOW = 1;
-      	const META_ROBOTS_INDEX_NOFOLLOW = 2;
-      	const META_ROBOTS_NOINDEX_FOLLOW = 3;
-      	const META_ROBOTS_NOINDEX_NOFOLLOW = 4;
-        const META_ROBOTS_INDEX_FOLLOW_NOARCHIVE = 5;
-        const META_ROBOTS_INDEX_NOFOLLOW_NOARCHIVE = 6;
-        const META_ROBOTS_NOINDEX_NOFOLLOW_NOARCHIVE = 7;
-
-        public function getAllOptions()
-        {
-            return array(
-    			self::META_ROBOTS_INDEX_FOLLOW => array('value' => self::META_ROBOTS_INDEX_FOLLOW, 'label' => Mage::helper('metarobots')->__('INDEX,FOLLOW')),
-                self::META_ROBOTS_INDEX_NOFOLLOW => array('value' => self::META_ROBOTS_INDEX_NOFOLLOW, 'label' => Mage::helper('metarobots')->__('INDEX,NOFOLLOW')),
-                self::META_ROBOTS_NOINDEX_FOLLOW => array('value' => self::META_ROBOTS_NOINDEX_FOLLOW, 'label' => Mage::helper('metarobots')->__('NOINDEX,FOLLOW')),
-                self::META_ROBOTS_NOINDEX_NOFOLLOW => array('value' => self::META_ROBOTS_NOINDEX_NOFOLLOW, 'label' => Mage::helper('metarobots')->__('NOINDEX,NOFOLLOW')),
-                self::META_ROBOTS_INDEX_FOLLOW_NOARCHIVE => array('value' => self::META_ROBOTS_INDEX_FOLLOW_NOARCHIVE, 'label' => Mage::helper('metarobots')->__('INDEX,FOLLOW,NOARCHIVE')),
-                self::META_ROBOTS_INDEX_NOFOLLOW_NOARCHIVE => array('value' => self::META_ROBOTS_INDEX_NOFOLLOW_NOARCHIVE, 'label' => Mage::helper('metarobots')->__('INDEX,NOFOLLOW,NOARCHIVE')),
-                self::META_ROBOTS_NOINDEX_NOFOLLOW_NOARCHIVE => array('value' => self::META_ROBOTS_NOINDEX_NOFOLLOW_NOARCHIVE, 'label' => Mage::helper('metarobots')->__('NOINDEX,NOFOLLOW,NOARCHIVE')),
-            );
-        }
-
-        public function getOptionLabel($key) {
-            $options = $this->getAllOptions();
-
-            return isset($options[$key]) ? $options[$key]['label'] : $options[self::META_ROBOTS_INDEX_FOLLOW];
-        }
+        return array(
+            self::META_ROBOTS_INDEX_FOLLOW               => array('value' => self::META_ROBOTS_INDEX_FOLLOW,               'label' => Mage::helper('metarobots')->__('INDEX,FOLLOW')),
+            self::META_ROBOTS_INDEX_NOFOLLOW             => array('value' => self::META_ROBOTS_INDEX_NOFOLLOW,             'label' => Mage::helper('metarobots')->__('INDEX,NOFOLLOW')),
+            self::META_ROBOTS_NOINDEX_FOLLOW             => array('value' => self::META_ROBOTS_NOINDEX_FOLLOW,             'label' => Mage::helper('metarobots')->__('NOINDEX,FOLLOW')),
+            self::META_ROBOTS_NOINDEX_NOFOLLOW           => array('value' => self::META_ROBOTS_NOINDEX_NOFOLLOW,           'label' => Mage::helper('metarobots')->__('NOINDEX,NOFOLLOW')),
+            self::META_ROBOTS_INDEX_FOLLOW_NOARCHIVE     => array('value' => self::META_ROBOTS_INDEX_FOLLOW_NOARCHIVE,     'label' => Mage::helper('metarobots')->__('INDEX,FOLLOW,NOARCHIVE')),
+            self::META_ROBOTS_INDEX_NOFOLLOW_NOARCHIVE   => array('value' => self::META_ROBOTS_INDEX_NOFOLLOW_NOARCHIVE,   'label' => Mage::helper('metarobots')->__('INDEX,NOFOLLOW,NOARCHIVE')),
+            self::META_ROBOTS_NOINDEX_NOFOLLOW_NOARCHIVE => array('value' => self::META_ROBOTS_NOINDEX_NOFOLLOW_NOARCHIVE, 'label' => Mage::helper('metarobots')->__('NOINDEX,NOFOLLOW,NOARCHIVE')),
+        );
     }
+
+
+    /**
+     * @param int $key
+     * @return mixed
+     */
+    public function getOptionLabel($key) {
+        $options = $this->getAllOptions();
+
+        return isset($options[$key]) ? $options[$key]['label'] : $options[self::META_ROBOTS_INDEX_FOLLOW]['label'];
+    }
+}

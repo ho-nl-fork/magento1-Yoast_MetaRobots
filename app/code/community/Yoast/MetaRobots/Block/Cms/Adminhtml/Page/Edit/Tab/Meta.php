@@ -57,7 +57,7 @@ extends Mage_Adminhtml_Block_Widget_Form
 		$fieldset->addField('meta_robots', 'select', array(
             'name'      => 'meta_robots',
             'label'     => Mage::helper('cms')->__('Robots'),
-             'values'    => Mage::getModel('adminhtml/System_Config_Source_Design_Robots')->toOptionArray(),
+            'values'    => Mage::getSingleton('metarobots/attribute_source_metarobots')->getAllOptions(),
 			'disabled'  => $isElementDisabled
         ));
 
